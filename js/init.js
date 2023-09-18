@@ -67,4 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
     location.href="login.html";
   })
   
+  document.getElementById('dark-mode').addEventListener('click', function() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+  })
+  
 });
