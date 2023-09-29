@@ -327,12 +327,16 @@ a.custom-card:hover {
   transition: transform 0.2s;
 }
 
-#contenedor-producto{
+#contenedor-producto, #contenedor-relacionados {
   font-family: raleway;
 }
 
 .imagen-info{
   border-radius: 10%;
+  width: 100%;
+}
+
+.imagen-relacionados{
   width: 100%;
 }
 
@@ -346,6 +350,16 @@ a.custom-card:hover {
 .contenedor-imagen-info:hover{
   transform: scale(1.2);
   border-radius: 10%;
+  cursor: pointer;
+  filter: contrast(120%);
+}
+
+.tarjetas-relacionadas{
+  transition: 0.3s;
+}
+
+.tarjetas-relacionadas:hover{
+  transform: scale(1.05);
   cursor: pointer;
   filter: contrast(120%);
 }
@@ -382,6 +396,19 @@ i{
   resize: none;
 }
 
+.dropdown-item{
+  transition: .5s, color .8s;
+      -webkit-transition: .5s, color .8s;
+      -moz-transition: .5s, color .8s;
+      
+}
+.dropdown-item:hover{
+  transform: translatex(20px);
+      -webkit-transform: translatex(20px);
+      -moz-transform: translatex(20px);
+      font-size: large;
+}
+
 /* Estilos para el modo oscuro */
 body.dark-mode {
   background-color: #090717f2;
@@ -403,7 +430,7 @@ body.dark-mode {
   display: none
 }
 #dark-label{
-  color: #fff;
+  color: #6009ad;
   font-size: 1.5em;
   cursor: pointer;
 }

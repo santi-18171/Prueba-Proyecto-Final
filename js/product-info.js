@@ -106,6 +106,30 @@ function generarComment() {
         `;
 }
 
+function mostrarRelacionados(info) {
+  let contenedor = document.getElementById('contenedor-relacionados');
+  for (let i of info.relatedProducts) {
+    contenedor.innerHTML += `
+    <div onclick="setProductID(${i.id})" class="col-4">
+        <div class="tarjetas-relacionadas card" style="width: auto;">
+          <img src="${i.image}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="d-flex justify-content-center">${i.name}</h5>
+          </div>
+        </div>
+    </div>
+        
+     
+    `
+  }
+}
+
+function setProductID(id) {
+  localStorage.setItem("ProductID", id);
+  window.location = "product-info.html";
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const enviarComment = document.getElementById("enviar-comment");
   enviarComment.addEventListener("click", () => {
@@ -113,4 +137,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   traerInfo(apiProducts, mostrarInfo);
   traerInfo(apiComments, mostrarComments);
+  traerInfo(apiProducts, mostrarRelacionados);
 });
