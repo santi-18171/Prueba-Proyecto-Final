@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   </head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+  <body class="vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark p-1">
       <div class="container">
         <button
           class="navbar-toggler"
@@ -45,57 +45,70 @@
             </li>
             <li class="nav-item">
               <div class="dropdown">
-                <a class="btn dropdown-toggle" href="my-profile.html" role="button" id="user" data-bs-toggle="dropdown" aria-expanded="false">   
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="user">
-                  <li><a class="dropdown-item" href="cart.html">Mi Carrito <i class="bi bi-cart3"></i></a></li>
-                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil <i class="bi bi-person-square"></i></a></li>
-                  <li><a class="dropdown-item" id="bye"  href="">Cerrar Sesión <i class="bi bi-box-arrow-left"></i></a></li>
-                  <li class="nav-item">
-                    <label for="modoOscuroToggle" id="dark-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
-                      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-                    </svg></label>
-                    <input type="checkbox" id="modoOscuroToggle">
-                </li>
+                <button class="btn dropdown-toggle" type="button" id="user" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu" aria-labelledby="user">                
+                  <li><a class="dropdown-item" href="my-profile.html"><i class="bi bi-person-square iconoMenu"></i> Mi perfil</a></li>
+                  <li>
+                    <li><a class="dropdown-item" href="cart.html"><i class="bi bi-cart3 iconoMenu"></i> Mi carrito </a></li>
+                    <li>
+                      <a class="dropdown-item">
+                      <label class="" for="modoOscuroToggle" id="dark-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                        </svg>Mago oscuro</label>
+                      <input type="checkbox" id="modoOscuroToggle">
+                  </a>
+                  </li>
+                  <li><a class="dropdown-item" id="bye" href=""><i class="bi bi-box-arrow-left iconoMenu"></i> Cerrar sesión</a></li>                
                 </ul>
               </div>
-            </li>
-            <li class="nav-item"></li>
-            <li class="nav-item">
-              <button id="salir">
-                <span>Log out</span>
-              </button>
-            </li>
+            </li>  
           </ul>
         </div>
       </div>
     </nav>
     <main>
-      <div class="container sombra pb-2" id="contInfoProd">
-        <div id="contenedor-producto"></div>
-        <div class="row" id="contenedor-imagenes"></div>
-        <div id="contenedor-comentarios ">
-          <h4 class="mt-5 mb-3">Comentarios</h4>
+      <div class="container sombra pb-2 mt-5" id="contInfoProd">
+        
+        <div class="row">
+          <div class="mt-3" id="contenedorTitulo"></div>
+          <div class="contenedorImg col-lg-6 col-sm-12">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div id="carousel-inner" class="carousel-inner">                          
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div id="contenedor-producto" class="col-sm-12 col-lg-6 fs-5 mt-3"></div>
+        </div> 
+        <div id="contenedor-comentarios">
+          <h4 class="mt-sm-3 mt-lg-5 mb-3">Comentarios</h4>
           <div id="commentList"></div>
           <div id="addComment">
-            <h4>Comentar</h4>
-            <h5>Tu opinión:</h5>
+            <h4 class="py-2">Comentar</h4>
+            <h5 class="pb-2">Tu opinión:</h5>
             <textarea
               id="textarea"
               class="no-resize"
               name="opinion"
-              cols="30"
+              cols="25"
               row="5"
               placeholder="Escribe tu opinión sobre este producto..."
             ></textarea>
             <div class="puntuacion">
-              <h5>Tu puntuación:</h5>
+              <h5 class="py-2">Tu puntuación:</h5>
               <div class="estrellas">
-                <input id="5" type="radio" name="estrellas" value="5"><label for="5"><i class="bi bi-star"></i></label>
-                <input id="4" type="radio" name="estrellas" value="4"><label for="4"><i class="bi bi-star"></i></label>
-                <input id="3" type="radio" name="estrellas" value="3"><label for="3"><i class="bi bi-star"></i></label>
-                <input id="2" type="radio" name="estrellas" value="2"><label for="2"><i class="bi bi-star"></i></label>
-                <input id="1" type="radio" name="estrellas" value="1"><label for="1"><i class="bi bi-star"></i></label>
+                <input id="5" type="radio" name="estrellas" value="5"><label for="5"><i class="bi bi-star estrellita"></i></label>
+                <input id="4" type="radio" name="estrellas" value="4"><label for="4"><i class="bi bi-star estrellita"></i></label>
+                <input id="3" type="radio" name="estrellas" value="3"><label for="3"><i class="bi bi-star estrellita"></i></label>
+                <input id="2" type="radio" name="estrellas" value="2"><label for="2"><i class="bi bi-star estrellita"></i></label>
+                <input id="1" type="radio" name="estrellas" value="1"><label for="1"><i class="bi bi-star estrellita"></i></label>
               </div>
               <br/>
               <button type="submit" id="enviar-comment" class="btn btn-primary">
@@ -104,7 +117,7 @@
             </div>
           </div>
         </div>
-        <div id="contenedor-relacionados" class="row pb-3">
+        <div id="contenedor-relacionados" class="row col-sm-12 col-lg-6 pb-3">
           <h3 class="pt-5 pb-3">Productos relacionados</h3>
         </div>
       </div>

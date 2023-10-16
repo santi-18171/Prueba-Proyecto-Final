@@ -56,24 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }else{
     let nombreDeUsuario = usuarioParse.email;
     document.getElementById('user').innerHTML= nombreDeUsuario.substring(0, nombreDeUsuario.indexOf('@'));
-  }
-  
-  // Funcionalidad para Logout con el botón salir
-  //   Elimina los datos del usuario del Local storage
-  //   Redirige a la página de Login
-  document.getElementById('salir').addEventListener('click', function() {
-    localStorage.removeItem('user');
-
-    location.href="login.html";
-  })
-  
-//Repito la función para que se cierre sesión al hacer click en Cerrar Sesión
-document.getElementById("bye").addEventListener('click', function() {
-  localStorage.removeItem('user');
-
-  location.href="login.html";
-})
-
+  } 
   // Función para cambiar entre el modo claro y oscuro
 function toggleModoOscuro() {
   // Obtener una referencia al elemento 'body' del documento y los botones
@@ -118,4 +101,10 @@ window.addEventListener('load', () => {
 const modoOscuroCheckbox = document.getElementById('modoOscuroToggle');
 modoOscuroCheckbox.addEventListener('change', toggleModoOscuro);
 
+
+  //Repito la función para que se cierre sesión al hacer click en Cerrar Sesión
+  document.getElementById("bye").addEventListener('click', function() {
+    localStorage.removeItem('user');
+    location.href="login.html";
+  })
 });
