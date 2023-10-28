@@ -110,4 +110,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   addEventListenerABtn('btnAumentar', productsCart)
   addEventListenerABtn('btnRestar', productsCart)
   // Pauta 3 
+
+let btnRadioCredito = document.getElementById("Tarjeta-de-credito");
+let btnRadioBancaria = document.getElementById("Transferencia-bancaria");
+let inputsTar = document.getElementById("tarjeta").getElementsByClassName("form-control")
+let inputBank = document.getElementById("inputBank")
+let fDM = document.getElementById("fDM")
+
+btnRadioCredito.addEventListener("click", () => {
+  inputBank.disabled = true;
+  inputBank.value = "";
+  for (input of inputsTar) {
+    input.disabled = false;
+  }
+  fDM.innerHTML = "Tarjeta de Crédito";
+
+})
+
+btnRadioBancaria.addEventListener("click", () => {
+  for (input of inputsTar) {
+    input.disabled = true;
+    input.value = "";
+  }
+  inputBank.disabled = false;
+  fDM.innerHTML = "Transferencia Bancaria";
+  
+})
+
 });
+
